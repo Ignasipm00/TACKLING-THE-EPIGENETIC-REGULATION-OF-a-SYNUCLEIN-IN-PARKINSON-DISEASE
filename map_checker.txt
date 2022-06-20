@@ -1,0 +1,2 @@
+module load samtools
+samtools quickcheck file.bam

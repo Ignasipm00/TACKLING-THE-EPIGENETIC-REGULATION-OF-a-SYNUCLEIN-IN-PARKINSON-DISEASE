@@ -1,0 +1,19 @@
+for trimmed in trimmed_DNA/*/*fq.gz; do
+sh /slgpfs/projects/idib57/GA_001_21_Parkinson/run.sbatch.3h.sh "fastqc $trimmed -o QC_trimmed_DNA/"
+done
+
+
+--
+
+cat chr*_results/DAnL2PD_VS_DAnC_chr*_results.csv > DAnL2PD_VS_DAnC_allchr_results.csv
+
+sed -i '/seqnames/d' DAnL2PD_VS_DAnC_allchr_results.csv
+
+cat h DAnL2PD_VS_DAnC_allchr_results.csv > DAnL2PD_VS_DAnC_allchr_results.csvs
+
+mv DAnL2PD_VS_DAnC_allchr_results.csvs DAnL2PD_VS_DAnC_allchr_results.csv
+
+
+head DAnL2PD_VS_DAnC_allchr_results.csv 
+wc -l DAnL2PD_VS_DAnC_allchr_results.csv 
+wc -l chr*_results/DAnL2PD_VS_DAnC_chr*_results.csv 
