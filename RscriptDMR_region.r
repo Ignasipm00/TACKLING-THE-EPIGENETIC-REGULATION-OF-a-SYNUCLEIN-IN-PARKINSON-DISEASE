@@ -8,12 +8,12 @@ load('hg19annot.RData') # alternative(which works) to getAnnot("hg19")
 library(bsseq)
 library(dmrseq)
 library("BiocParallel")
-register(MulticoreParam(4)) #to parallelize using X cores
+register(MulticoreParam(4)) #to parallelize using 24 cores
 
 factor <- read.table('Group.Comparison.txt',sep = '\t',header=TRUE)#,na.strings=c(""," ","NA"))
 
 setwd('methyl_output_chr/')
-file <- dir('chr12',full.names = T,pattern='.bedGraph') 
+file <- dir('chr12',full.names = T,pattern='.bed') 
 #file <- dir(pattern='.bedGraph')
  
 #setwd('chr…/')
